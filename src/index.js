@@ -28,7 +28,7 @@ const refs = {
     // };
     // auditList()
 
-    refs.adwBtn.addEventListener('mouseup', (event) => {
+    refs.adwBtn.addEventListener('click', () => {
         const saveFilm = localStorage.getItem(LOCAL_STORAGE_KEY);
         // console.log(saveFilm.length);
         if (!saveFilm) {
@@ -36,8 +36,8 @@ const refs = {
             refs.adwBtn.innerText = 'Remove';
             return 
         } else {
-            // localStorage.removeItem(LOCAL_STORAGE_KEY);
-            // refs.adwBtn.innerText = 'add to Watched';
+            localStorage.removeItem(LOCAL_STORAGE_KEY);
+            refs.adwBtn.innerText = 'add to Watched';
             // console.log("run")
             return 
         }
