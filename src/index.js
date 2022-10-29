@@ -19,18 +19,23 @@ const refs = {
     
     const LOCAL_STORAGE_KEY = 'films';
     
-// let saveFilm = null;
-
-    // function auditList() {
-    //     if (saveFilm === null) {
-    //         saveF = [];
-    //     }        
-    // };
-    // auditList()
+    const saveFilm = localStorage.getItem(LOCAL_STORAGE_KEY);
+        if (!saveFilm)  {
+        localStorage.setItem (LOCAL_STORAGE_KEY, JSON.stringify([]));
+        
+        };            
 
     refs.adwBtn.addEventListener('click', () => {
         const saveFilm = localStorage.getItem(LOCAL_STORAGE_KEY);
         // console.log(saveFilm.length);
+        try {
+            const parseFilm = JSON.parse(saveFilm);
+            console.log(parseFilm);
+        } catch (error) {
+            console.log(error);
+            // const parseFilm = JSON.parse(saveFilm);
+            // console.log(parseFilm);
+        }
         if (!saveFilm) {
             localStorage.setItem (LOCAL_STORAGE_KEY, JSON.stringify(films));
             refs.adwBtn.innerText = 'Remove';
@@ -38,7 +43,6 @@ const refs = {
         } else {
             localStorage.removeItem(LOCAL_STORAGE_KEY);
             refs.adwBtn.innerText = 'add to Watched';
-            // console.log("run")
             return 
         }
         })
