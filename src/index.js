@@ -15,79 +15,136 @@ const refs = {
     queueBtn:document.querySelector('.queue'),
     adwBtn:document.querySelector('.adw'),
     atqBtn:document.querySelector('.atq'),
+
+    gokBtn:document.querySelector('.gok'),
     }
     
     const LOCAL_STORAGE_KEY = 'films';
-    let parseFilm=[];
-    let deletePosition=-1; 
+    const LOCAL_STORAGE_KEY_QUEUE='queue';
+    let deletePosition = - 1; 
+    let deletePositionQ = - 1; 
+    let b = 0;
 
 
-    const saveFilm = localStorage.getItem(LOCAL_STORAGE_KEY);
-        if (!saveFilm)  {
-        localStorage.setItem (LOCAL_STORAGE_KEY, JSON.stringify([])); 
-        };            
-
+    try{
+        const saveFilm = localStorage.getItem(LOCAL_STORAGE_KEY);
+        if (!saveFilm) {
+            localStorage.setItem (LOCAL_STORAGE_KEY, JSON.stringify([])); 
+        };
+        const saveFilm1 = localStorage.getItem(LOCAL_STORAGE_KEY_QUEUE);
+        if (!saveFilm1) { 
+            localStorage.setItem (LOCAL_STORAGE_KEY_QUEUE, JSON.stringify([])); 
+        };
+    } catch (error) {
+            console.log(error);            
+        }
 
     
-        function statusBtn(object){
-            let arrayFilms=[]
+        function statusBtn(object) {
+            checkВutton(object, LOCAL_STORAGE_KEY, refs.adwBtn,'WATCHED')
+        } 
+        function checkВutton(object, locstorkey, refsBtn, tekst) {
+            let arrayFilms = []
             try {
-                arrayFilms = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY)); 
+                arrayFilms = JSON.parse(localStorage.getItem(locstorkey)); 
             } catch (error) {
                 console.log(error);            
             }
             if (!arrayFilms.length){
                 console.log("Список фільмів збережених у памяті пустий кнопка add to watch");
-                refs.adwBtn.innerText = 'ADD TO WATCHED';
+                refsBtn.innerText = 'ADD TO ' + tekst;
                 return 0;
             } 
             else
             {
             const resultSearch = arrayFilms.findIndex(option => option.id === object.id)
-                if (resultSearch>-1){
-                    console.log("Фільм знаходиться в збережених у памяті кнопка remove під номером - ",resultSearch);
-                refs.adwBtn.innerText = 'REMOVE';
+                if (resultSearch > - 1){
+                    console.log("Фільм знаходиться в збережених у памяті кнопка remove під номером - ", resultSearch);
+                    refsBtn.innerText = 'REMOVE TO ' + tekst;
                 return resultSearch;
                 } else
                 {
                     console.log("Фільма немає в збережених у памяті кнопка add to watch");
-                    refs.adwBtn.innerText = 'ADD TO WATCHED';
-                return -1;
+                    refsBtn.innerText = 'ADD TO ' + tekst;
+                return - 1;
                 }
-
             }
         }
 
-    function addFilm(object){
+    function addFilm(object, locstorkey, refsBtn, tekst) {
         try {
-            const arrayF = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+            const arrayF = JSON.parse(localStorage.getItem(locstorkey));
             arrayF.push(object)
-            localStorage.setItem (LOCAL_STORAGE_KEY, JSON.stringify(arrayF));  
+            localStorage.setItem (locstorkey, JSON.stringify(arrayF));  
             console.log('фільм додано')
-            refs.adwBtn.innerText = 'REMOVE';
+            refsBtn.innerText = 'REMOVE TO ' + tekst;
         } catch (error) {
             console.log(error);            
         }
         }
-    function removeFilm(deleteP){
+    function removeFilm(deleteP, locstorkey, refsBtn, tekst) {
         try {
-            const arrayF = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
-            arrayF.splice(deleteP,1)
-            localStorage.setItem (LOCAL_STORAGE_KEY, JSON.stringify(arrayF));
+            const arrayF = JSON.parse(localStorage.getItem(locstorkey));
+            arrayF.splice(deleteP, 1)
+            localStorage.setItem (locstorkey, JSON.stringify(arrayF));
             console.log('фільм видалено')
-            refs.adwBtn.innerText = 'ADD TO WATCHED';   
+            refsBtn.innerText = 'ADD TO ' + tekst;   
         } catch (error) {
             console.log(error);            
         }
         }
 
+        refs.adwBtn.addEventListener('click', () => {
+            const teksT = refs.adwBtn.innerText;
+            console.log(teksT);
+            (teksT === 'ADD TO WATCHED') ? addFilm(films[b],LOCAL_STORAGE_KEY, refs.adwBtn,'WATCHED') : removeFilm(deletePosition, LOCAL_STORAGE_KEY, refs.adwBtn, 'WATCHED');
+        })
+        
+        
+        function massiv(locstorkey){
+        try {
+            return JSON.parse(localStorage.getItem(locstorkey));
+        
+        } catch (error) {
+            console.log(error);            
+    }}
+    refs.watchedBtn.addEventListener('click', () => {
+        massiv(LOCAL_STORAGE_KEY)
+        // massiv(LOCAL_STORAGE_KEY)
+    })
 
+
+    function massiv(locstorkey){
+        try {
+            return JSON.parse(localStorage.getItem(locstorkey));
+        
+        } catch (error) {
+            console.log(error);            
+    }}
+    refs.queueBtn.addEventListener('click', () => {
+        // massiv(LOCAL_STORAGE_KEY_QUEUE)
+        console.log(massiv(LOCAL_STORAGE_KEY_QUEUE))
+    })
+
+    refs.atqBtn.addEventListener('click', () => {
+        const teksT = refs.atqBtn.innerText;
+        console.log(teksT);
+        (teksT === 'ADD TO QUEUE') ? addFilm(films[b],LOCAL_STORAGE_KEY_QUEUE, refs.atqBtn,'QUEUE') : removeFilm(deletePositionQ, LOCAL_STORAGE_KEY_QUEUE, refs.atqBtn, 'QUEUE');
+        })
+
+
+
+
+
+
+
+
+
+
+    refs.gokBtn.addEventListener('click', () => {
         const b = Math.floor(Math.random() * 7);
         console.log('Рандомний фільм', films[b]);
-        deletePosition = statusBtn(films[b]);
-
-    refs.adwBtn.addEventListener('click', () => {
-    const teksT = refs.adwBtn.innerText;
-    console.log(teksT);
-    (teksT==='ADD TO WATCHED') ? addFilm(films[b]) : removeFilm(deletePosition);
+        deletePosition = checkВutton(films[b], LOCAL_STORAGE_KEY, refs.adwBtn,'WATCHED');
+        deletePositionQ = checkВutton(films[b], LOCAL_STORAGE_KEY_QUEUE,  refs.queueBtn,'QUEUE');
+        
     })
