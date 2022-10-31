@@ -1,4 +1,3 @@
-//# sourceMappingURL=http://example.com/path/to/your/sourcemap.map
 const films = [
     { id: "913290", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
     { id: "49046", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
@@ -141,3 +140,5 @@ const refs = {
         deletePositionQ = checkВutton(films[b], LOCAL_STORAGE_KEY_QUEUE, refs.atqBtn,'QUEUE');
         
     })
+
+
