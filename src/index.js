@@ -96,6 +96,7 @@ const refs = {
         (teksT === 'ADD TO WATCHED') ? addFilm(films[b],LOCAL_STORAGE_KEY, refs.adwBtn,'WATCHED') : removeFilm(deletePosition, LOCAL_STORAGE_KEY, refs.adwBtn, 'WATCHED');
     })
         
+
     function massiv(locstorkey){
         try {
             return JSON.parse(localStorage.getItem(locstorkey));
