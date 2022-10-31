@@ -108,7 +108,6 @@ const refs = {
         // console.log(massiv(LOCAL_STORAGE_KEY)); 
     })
 
-
     function massiv(locstorkey){
         try {
             return JSON.parse(localStorage.getItem(locstorkey));
