@@ -1,14 +1,14 @@
-// const films = [
-//     { id: "913290", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
-//     { id: "49046", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
-//     { id: "541134", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
-//     { id: "83659", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
-//     { id: "203085", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
-//     { id: "619730", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
-//     { id: "436270", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
-//     { id: "1032950", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
-//     { id: "157061", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
-// ];
+const films = [
+    { id: "913290", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
+    { id: "49046", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
+    { id: "541134", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
+    { id: "83659", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
+    { id: "203085", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
+    { id: "619730", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
+    { id: "436270", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
+    { id: "1032950", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
+    { id: "157061", href: "https://api.themoviedb.org/3/trending/all/day?api_key=e862719ae3fd0863df1748cb2452c82b" },
+];
 
 const refs = {
     watchedBtn:document.querySelector('.watched'),
@@ -104,8 +104,8 @@ const refs = {
             console.log(error);            
     }}
     refs.watchedBtn.addEventListener('click', () => {
-        massiv(LOCAL_STORAGE_KEY)
-        // console.log(massiv(LOCAL_STORAGE_KEY)); 
+        // massiv(LOCAL_STORAGE_KEY)
+        console.log(massiv(LOCAL_STORAGE_KEY)); 
     })
 
     function massiv(locstorkey){
@@ -116,8 +116,8 @@ const refs = {
             console.log(error);            
     }}
     refs.queueBtn.addEventListener('click', () => {
-        massiv(LOCAL_STORAGE_KEY_QUEUE)
-        // console.log(massiv(LOCAL_STORAGE_KEY_QUEUE))
+        // massiv(LOCAL_STORAGE_KEY_QUEUE)
+        console.log(massiv(LOCAL_STORAGE_KEY_QUEUE))
     })
 
     refs.atqBtn.addEventListener('click', () => {
