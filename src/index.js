@@ -90,12 +90,11 @@ const refs = {
         }
         }
 
-        refs.adwBtn.addEventListener('click', () => {
-            const teksT = refs.adwBtn.innerText;
-            console.log(teksT);
-            (teksT === 'ADD TO WATCHED') ? addFilm(films[b],LOCAL_STORAGE_KEY, refs.adwBtn,'WATCHED') : removeFilm(deletePosition, LOCAL_STORAGE_KEY, refs.adwBtn, 'WATCHED');
-        })
-        
+    refs.adwBtn.addEventListener('click', () => {
+        const teksT = refs.adwBtn.innerText;
+        console.log(teksT);
+        (teksT === 'ADD TO WATCHED') ? addFilm(films[b],LOCAL_STORAGE_KEY, refs.adwBtn,'WATCHED') : removeFilm(deletePosition, LOCAL_STORAGE_KEY, refs.adwBtn, 'WATCHED');
+    })
         
         function massiv(locstorkey){
         try {
@@ -105,8 +104,8 @@ const refs = {
             console.log(error);            
     }}
     refs.watchedBtn.addEventListener('click', () => {
-        // massiv(LOCAL_STORAGE_KEY)
-        console.log(massiv(LOCAL_STORAGE_KEY)); 
+        massiv(LOCAL_STORAGE_KEY)
+        // console.log(massiv(LOCAL_STORAGE_KEY)); 
     })
 
 
@@ -118,8 +117,8 @@ const refs = {
             console.log(error);            
     }}
     refs.queueBtn.addEventListener('click', () => {
-        // massiv(LOCAL_STORAGE_KEY_QUEUE)
-        console.log(massiv(LOCAL_STORAGE_KEY_QUEUE))
+        massiv(LOCAL_STORAGE_KEY_QUEUE)
+        // console.log(massiv(LOCAL_STORAGE_KEY_QUEUE))
     })
 
     refs.atqBtn.addEventListener('click', () => {
@@ -127,9 +126,6 @@ const refs = {
         console.log(teksT);
         (teksT === 'ADD TO QUEUE') ? addFilm(films[b],LOCAL_STORAGE_KEY_QUEUE, refs.atqBtn,'QUEUE') : removeFilm(deletePositionQ, LOCAL_STORAGE_KEY_QUEUE, refs.atqBtn, 'QUEUE');
         })
-
-
-
 
 
 
