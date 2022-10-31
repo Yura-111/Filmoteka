@@ -138,7 +138,7 @@ const refs = {
 
 
     refs.gokBtn.addEventListener('click', () => {
-        const b = Math.floor(Math.random() * 7);
+        b = Math.floor(Math.random() * 7);
         console.log('Рандомний фільм', films[b]);
         deletePosition = checkВutton(films[b], LOCAL_STORAGE_KEY, refs.adwBtn,'WATCHED');
         deletePositionQ = checkВutton(films[b], LOCAL_STORAGE_KEY_QUEUE, refs.atqBtn,'QUEUE');
