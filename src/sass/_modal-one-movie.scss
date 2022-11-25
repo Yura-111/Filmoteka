@@ -1,0 +1,234 @@
+.body-no-scroll {
+  overflow: hidden;
+}
+
+.backdrop-modal {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  background-color: rgba(0, 0, 0, 0.2);
+  transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 300ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop-modal.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  & .modal-movie {
+    transform: scale(1.1) translate(-50%, -50%);
+  }
+}
+
+.modal-movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  width: 95vw;
+  top: 20px;
+  left: 50%;
+  transform-origin: top left;
+  transform: translate(-50%) scale(1);
+  transition: transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  background: #ffffff;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px;
+  padding: 48px 20px 40px 20px;
+  @include mobile {
+    width: 95vw;
+    height: 940px;
+  }
+  @include tablet {
+    width: 704px;
+    height: 552px;
+    flex-direction: row;
+    align-items: start;
+    padding: 40px 72px 40px 36px;
+  }
+  @include desktop {
+    width: 806px;
+    height: 558px;
+    padding: 40px 12px 40px 12px;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 30px;
+  height: 30px;
+  border: 0;
+  color: #000000;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    color: #ff6b01;
+  }
+}
+
+.modal-close-svg {
+  fill: #000000;
+}
+
+.modal-poster {
+  width: 240px;
+  height: 357px;
+  @include tablet {
+    width: 264px;
+    height: 374px;
+    margin-right: 68px;
+  }
+  @include desktop {
+    width: 375px;
+    height: 478px;
+  }
+}
+
+.modal-poster__img {
+  display: block;
+  // max-width: 100%;
+  aspect-ratio: auto;
+  width: 238px;
+  height: 357px;
+  border-radius: 5px;
+  object-fit: fill;
+  @include tablet {
+    width: 249px;
+    height: 374px;
+  }
+  @include desktop {
+    width: 318px;
+    height: 478px;
+  }
+}
+
+.modal-descr {
+  width: 240px;
+  @include tablet {
+    width: 264px;
+  }
+  @include desktop {
+    width: 391px;
+  }
+}
+
+.modal-title {
+  margin-top: 20px;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.15;
+  @include tablet {
+    margin-top: 0px;
+  }
+}
+
+.modal-info {
+  margin-top: 20px;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.modal-info__param {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  color: #8c8c8c;
+}
+
+.modal-info__data {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+}
+
+.modal-info__data-vote {
+  display: inline-flex;
+  color: #ffffff;
+  background-color: #ff6b01;
+  height: 16px;
+  width: 36px;
+  border-radius: 5px;
+  justify-content: center;
+}
+
+.modal-info__data-votes {
+  display: inline-flex;
+  background-color: #f7f7f7;
+  height: 16px;
+  width: 36px;
+  border-radius: 5px;
+  justify-content: center;
+}
+
+.modal-about {
+  margin-top: 20px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+}
+
+.modal-description {
+  overflow-y: scroll;
+  margin-top: 8px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.67;
+}
+
+.modal-btns {
+  margin-top: 20px;
+  display: flex;
+}
+
+.btn {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 1.33;
+  height: 44px;
+  width: 110px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+  background-color: #ffffff;
+  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  &:hover,
+  &:focus {
+    color: #ffffff;
+    background-color: #ff6b01;
+    border: 0;
+  }
+  @include tablet {
+    width: 125px;
+  }
+  @include desktop {
+    width: 136px;
+  }
+}
+
+.modal-watched {
+  margin-right: 20px;
+}

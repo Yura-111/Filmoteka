@@ -1,99 +1,52 @@
-# Parcel template
+## "Filmoteka"
 
-Этот проект был создан при помощи Parcel. Для знакомства и настройки
-дополнительных возможностей [обратись к документации](https://parceljs.org/).
+_Hi!_ :wave:
 
-## Подготовка нового проекта
+We are students of a group called **"DeVTeaM"** Academies GOIT. :rocket:
 
-1. Убедись что на компьютере установлена LTS-версия Node.js.
-   [Скачай и установи](https://nodejs.org/en/) её если необходимо.
-2. Склонируй этот репозиторий.
-3. Измени имя папки с `parcel-project-template` на имя своего проекта.
-4. Создай новый пустой репозиторий на GitHub.
-5. Открой проект в VSCode, запусти терминал и свяжи проект с GitHub-репозиторием
-   [по инструкции](https://docs.github.com/en/get-started/getting-started-with-git/managing-remote-repositories#changing-a-remote-repositorys-url).
-6. Установи зависимости проекта в терминале командой `npm install` .
-7. Запусти режим разработки, выполнив команду `npm start`.
-8. Перейди в браузере по адресу [http://localhost:1234](http://localhost:1234).
-   Эта страница будет автоматически перезагружаться после сохранения изменений в
-   файлах проекта.
+After the end of the course **JavaScript** , we needed to **build on** :pushpin:
+the knowledge and **implement** :page_with_curl: senior project in week and a
+half.
 
-## Файлы и папки
+:art: The designers for us have designed **team project layout** -
+**“Filmoteka”**.
 
-- Все паршалы файлов стилей должны лежать в папке `src/sass` и импортироваться в
-  файлы стилей страниц. Например, для `index.html` файл стилей называется
-  `index.scss`.
-- Изображения добавляй в папку `src/images`. Сборщик оптимизирует их, но только
-  при деплое продакшн версии проекта. Все это происходит в облаке, чтобы не
-  нагружать твой компьютер, так как на слабых машинах это может занять много
-  времени.
+:hammer_and_wrench: We were also given a ToR with a description of the
+functionality future site.
 
-## Деплой
+:man_student: The project was worked on by **8 people**. Each of them has been
+working on **specific tasks**.
 
-Для настройки деплоя проекта необходимо выполнить несколько дополнительных шагов
-по настройке твоего репозитория. Зайди во вкладку `Settings` и в подсекции
-`Actions` выбери выбери пункт `General`.
+- [**Team Lead:** Mykhailo Hordiienko](https://github.com/MykhailoHordiienko)
 
-![GitHub actions settings](./assets/actions-config-step-1.png)
+- [**Scrum master** & **Front-end developer**: Valeriia Diachenko](https://github.com/ValeriiaDiachenko)
 
-Пролистай страницу до последней секции, в которой убедись что выбраны опции как
-на следующем изображении и нажми `Save`. Без этих настроек у сборки будет
-недостаточно прав для автоматизации процесса деплоя.
+- [**Front-end developer**: Alex Vainahii](https://github.com/AlexVainahii)
 
-![GitHub actions settings](./assets/actions-config-step-2.png)
+- [**Front-end developer**: Valerii Mikhailenko](https://github.com/valerii-mykh)
 
-Продакшн версия проекта будет автоматически собираться и деплоиться на GitHub
-Pages, в ветку `gh-pages`, каждый раз когда обновляется ветка `main`. Например,
-после прямого пуша или принятого пул-реквеста. Для этого необходимо в файле
-`package.json` отредактировать поле `homepage` и скрипт `build`, заменив
-`your_username` и `your_repo_name` на свои, и отправить изменения на GitHub.
+- [**Front-end developerr**: Alexey Kushnir](https://github.com/Alexey-Kushnir)
 
-```json
-"homepage": "https://your_username.github.io/your_repo_name/",
-"scripts": {
-  "build": "parcel build src/*.html --public-url /your_repo_name/"
-},
-```
+- [**Front-end developer**: Yuriy Zagorsky](https://github.com/Yura-111)
 
-Далее необходимо зайти в настройки GitHub-репозитория (`Settings` > `Pages`) и
-выставить раздачу продакшн версии файлов из папки `/root` ветки `gh-pages`, если
-это небыло сделано автоматически.
+- [**Front-end developer**: Maksym Kravchenko](https://github.com/Makmar1983)
 
-![GitHub Pages settings](./assets/repo-settings.png)
+- [**Front-end developer**: Volodymyr Trofymenko](https://github.com/VTrofymenko)
 
-### Статус деплоя
+:computer: **Our goal** was to make a site that matches the layout, and and also
+performs all the tasks of the TOR. The main purpose of the site is to searching
+for a particular movie, as well as user library organization to manage your
+movie listings.
 
-Статус деплоя крайнего коммита отображается иконкой возле его идентификатора.
+:white_check_mark: **Throughout the project, we**:
 
-- **Желтый цвет** - выполняется сборка и деплой проекта.
-- **Зеленый цвет** - деплой завершился успешно.
-- **Красный цвет** - во время линтинга, сборки или деплоя произошла ошибка.
+- practiced Git teamwork skills;
+- continued to work with the Parcel builder;
+- used the Scrum methodology;
+- consolidated knowledge of HTML and CSS.
+- consolidated the knowledge gained during the course in JavaScript.
 
-Более детальную информацию о статусе можно посмотреть кликнув по иконке, и в
-выпадающем окне перейти по ссылке `Details`.
+As a result of coordinated teamwork :handshake: we got our project: ⬇
+[_Welcome!_](https://mykhailohordiienko.github.io/Filmoteka/) ⬇
 
-![Deployment status](./assets/status.png)
-
-### Живая страница
-
-Через какое-то время, обычно пару минут, живую страницу можно будет посмотреть
-по адресу указанному в отредактированном свойстве `homepage`. Например, вот
-ссылка на живую версию для этого репозитория
-[https://goitacademy.github.io/parcel-project-template](https://goitacademy.github.io/parcel-project-template).
-
-Если открывается пустая страница, убедись что во вкладке `Console` нет ошибок
-связанных с неправильными путями к CSS и JS файлам проекта (**404**). Скорее
-всего у тебя неправильное значение свойства `homepage` или скрипта `build` в
-файле `package.json`.
-
-## Как это работает
-
-![How it works](./assets/how-it-works.png)
-
-1. После каждого пуша в ветку `main` GitHub-репозитория, запускается специальный
-   скрипт (GitHub Action) из файла `.github/workflows/deploy.yml`.
-2. Все файлы репозитория копируются на сервер, где проект инициализируется и
-   проходит сборку перед деплоем.
-3. Если все шаги прошли успешно, собранная продакшн версия файлов проекта
-   отправляется в ветку `gh-pages`. В противном случае, в логе выполнения
-   скрипта будет указано в чем проблема.
+<a href="https://mykhailohordiienko.github.io/Filmoteka/"><img src="./src/images/D03A0D07-A903-49FC-9EA0-B3765F393751.jpeg" alt="Filmoteka" border="0"></a>

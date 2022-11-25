@@ -3,15 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
+    <title>Filmoteka</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,0,200"
+    />
     <link rel="stylesheet" href="./sass/index.scss" />
-    </head>
+  </head>
   <body>
-    <button type="button" class="but watched">Watched</button>
-    <button type="button" class="but queue">queue</button>
-    <button type="button" class="but adw" >add to Watched</button>
-    <button type="button" class="but atq">add to queue</button>
-    <button type="button" class="but gok">генерація відкриття картки</button>
+    <!-- ❗️❗️❗️ Add partials like so for every page -->
+    <div class="wrapper-main-content">
+      <include src="./partials/header.html"></include>
+
+      <main class="main">
+        <include src="./partials/search.html"></include>
+        <include src="./partials/gallery.html"></include>
+        <include src="./partials/pagination.html"></include>
+        <include src="./partials/up_btn.html"></include>
+        <include src="./partials/spinner.html"></include>
+      </main>
+
+      <include src="./partials/footer.html"></include>
+    </div>
+    <div class="modal-container">
+      <div class="backdrop-modal is-hidden"></div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/3.0.1/handlebars.min.js"></script>
     <script type="module" src="./index.js"></script>
   </body>
 </html>
